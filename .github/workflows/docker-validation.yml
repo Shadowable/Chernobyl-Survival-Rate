@@ -47,7 +47,7 @@ jobs:
           python -c "import json,sys; result=json.loads(sys.argv[1]); assert isinstance(result.get('demo_index'), (int, float)); assert 'not a survival probability' in result.get('notice', '')" "$response"
 
       - name: Check Streamlit UI
-        run: curl --fail --retry 20 --retry-connrefused --retry-delay 3 http://localhost:8501/
+        run: curl --fail --retry 5 --retry-all-errors --retry-delay 2 http://localhost:8501/
 
       - name: Show service logs on failure
         if: failure()
