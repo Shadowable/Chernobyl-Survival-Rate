@@ -14,6 +14,6 @@
       with the non-predictive notice.
 - [x] Check that the Streamlit page responds over HTTP.
 - [x] Print Compose logs on failure and stop/remove services after the run.
-- [ ] Push the readiness fix and confirm the GitHub Actions run passes.
+- [x] Push the readiness fix and confirm the GitHub Actions run passes.
 
 Workflow definition: [`.github/workflows/docker-validation.yml`](./.github/workflows/docker-validation.yml)
