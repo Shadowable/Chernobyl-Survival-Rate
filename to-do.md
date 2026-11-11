@@ -1,12 +1,18 @@
-# Project To-Do
+# GitHub Actions Docker Workflow
 
-## Implemented
+## Workflow steps
 
-- [x] Replace the California Housing API with a fictional, non-predictive demo index.
-- [x] Add validated age, distance, physical-ability, and dose-rate inputs.
-- [x] Redesign the Streamlit interface with clear historical-demo labeling.
-- [x] Update Docker packaging to exclude the unused housing-model artifact.
-- [x] Update documentation and API/UI tests.
-- [x] Verify that the demo is never labeled or represented as a survival probability.
-- [x] Exercise the redesigned UI against the API in a browser.
-- [x] Move the local and Docker host API port to 5002 to avoid an existing service on port 5000.
+- [x] Run automatically on pushes, pull requests, or manual dispatch.
+- [x] Check out the repository with read-only repository permissions.
+- [x] Set up Python 3.14 and install project dependencies.
+- [x] Run the unit test suite.
+- [x] Build the Docker image with Docker Compose.
+- [x] Start the API and Streamlit services and wait for them to be ready.
+- [x] Check the API health endpoint.
+- [x] Send a sample request and confirm the API returns a numeric demo index
+      with the non-predictive notice.
+- [x] Check that the Streamlit page responds over HTTP.
+- [x] Print Compose logs on failure and stop/remove services after the run.
+- [ ] Push this workflow to GitHub and confirm the first Actions run passes.
+
+Workflow definition: [`.github/workflows/docker-validation.yml`](./.github/workflows/docker-validation.yml)

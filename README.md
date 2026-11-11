@@ -66,6 +66,14 @@ Stop with **Ctrl+C**. To stop and remove the containers:
 docker compose down
 ```
 
+## Automated validation
+
+GitHub Actions runs on pushes, pull requests, and manual dispatch. The workflow
+runs the unit tests, builds the Docker image, starts both Compose services,
+checks the API health and prediction endpoints, and verifies that the Streamlit
+page responds. If a check fails, it prints the Compose logs and tears down the
+services. See [`.github/workflows/docker-validation.yml`](.github/workflows/docker-validation.yml).
+
 ## API usage
 
 Check the API:
